@@ -1,0 +1,249 @@
+﻿
+@{
+    ViewBag.Title = "CustomerOrderIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Project-JS/Customer/CustomerOrder.js"></script>
+<script src="~/Content/Project-JS/Customer/Customer.js"></script>
+
+<style>
+    .dataTables_filter {
+        margin-bottom: 10px;
+    }
+
+    #tblAccount {
+        font-family: Calibri
+    }
+</style>
+
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/Pages/FranchiseOrder.js"></script>*@
+<script>
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js('#tblVadak').DataTable();
+
+    });
+</script>
+
+<div class="card" style="margin-bottom:5px;">
+    <div class="card-body">
+        <table style="margin-top:5px;">
+            <tr>
+                <td>
+                    <span><b>Customer Order</b></span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+
+                    <b>Franchise : </b><span>   Sankalp Bakery  (Prajwal Gode)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!--<section>
+    <div>
+        <div class="card p-4">
+
+            <div class="row my-2 mt-1">
+                <div class="col-md-12 text-end">
+                    <button onclick="CostomerOrder()" class="btn btn-primary" href="#"><i class="bi bi-cart"></i> &nbsp;Add Cust.Order</button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table id="tblFrenOrder" class="table table-bordered table-hover" style="width:100%">
+                    <thead class="text-white bg-dark">
+                        <tr>
+                            <td class="text-white bg-dark">OrderDate</td>
+                            <td class="text-white bg-dark"> TotalAmount</td>
+                            <td class="text-white bg-dark"> PaidAmount</td>
+                            <td class="text-white bg-dark"> DeliveryDate</td>
+                            <td class="text-white bg-dark"> Quantity</td>
+                            <td class="text-white bg-dark"> </td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>21/02/23</td>
+                            <td>5000</td>
+                            <td>12000</td>
+                            <td>21/02/23</td>
+                            <td>1</td>
+                            <td>-->
+@*<button type='button' class='btn btn-primary btn-sm' onclick='Account(" + elementvalue.Id + ")'><i class='bi bi-cart'></i></button>*@
+<!--&nbsp;<button type='button' class='btn btn-success btn-sm' onclick='FranchiseEdit(" + elementvalue.Id + ")'><i class='bi bi-pencil-square' aria-hidden='true'></i></button>&nbsp;<button type='button' class='btn btn-info btn-sm' onclick='franchiseDetails(" + elementvalue.Id + ")'><i class='bi bi-eye-fill'></i></button>&nbsp;<button type='button' class='btn btn-danger btn-sm' onclick='DeleteOrganization(" + elementvalue.Id + ")'><i class='bi bi-trash-fill'></i></button></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <center>
+            <a type="button" href="#" class="btn btn-danger">Back</a>
+        </center>
+    </div>
+</section>-->
+
+
+
+
+<div class="row">
+    <!--<div class="row my-2 mt-1" id="Dontprint">
+
+        <div class="col-md-12">
+            <div class="row">-->
+    @*<div class="col-sm-6">
+            <a href="/Installment/InstallmentIndex" class="btn btn-primary print"><i class="bi bi-printer"></i>Installment</a>
+        </div>*@
+    @*<div class="col-sm-6  text-end">
+            <button onclick="AddUser()" class="btn btn-success"><i class="bi bi-whatsapp"></i>Whatsapp</button>
+            <button onclick="AddUser()" class="btn btn-info"><i class="bi bi-file-pdf-fill">PDF</i></button>
+            <button onclick="printDiv(print)" class="btn btn-primary print"><i class="bi bi-printer"></i>Print</button>
+        </div>*@
+
+    <!--</div>
+        </div>
+    </div>-->
+    <div class="col-sm-12" id="Dontprint">
+        <section>
+            <div>
+                <div class="card p-3">
+                    <form class="row g-3">
+                        <div class="col-sm-7">
+                            @*<label for="inputName" class="form-label">Name</label>*@
+                            <input type="text" class="form-control" id="txtName" placeholder="CustomerName">
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="col-sm-3">
+                            @*<label for="inputMobile" class="form-label">Mobile</label>*@
+                            <input type="text" class="form-control" id="txtMobileNo" placeholder="Mobile">
+                        </div>
+
+                        <div class="col-md-4">
+                            @*<label for="inputCity" class="form-label">City</label>*@
+                            <input type="text" class="form-control" id="txtCity" placeholder="City">
+                        </div>
+
+                        <div class="col-md-5">
+                            @*<label for="inputPincode" class="form-label">Pincode</label>*@
+                            <input type="text" class="form-control" id="txtPincode" placeholder="Pincode">
+                        </div>
+
+                        <div class="col-4">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Address" id="txtAddress" style="height: 50px;"></textarea>
+                                    <label for="floatingTextarea">Address</label>
+                                </div>
+                         </div>
+                        
+
+                        <div class="col-md-2">
+                            <div class="text-end">
+                                <input type="submit" class="btn btn-success" value="SUBMIT" onclick="SaveCustomer()" />
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="col-sm-4">
+                            <div class="form-floating">
+                                <select class="form-control" id="#">
+                                    <option value="">Select</option>
+                                    <option value="Cake">Cake</option>
+                                    <option value="Pizza">Pizza</option>
+                                    <option value="Sweet">Sweets</option>
+                                </select>
+                                <label for="Category">Category</label>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <select class="form-control" id="#">
+                                    <option value="">Select</option>
+                                    <option value="Cake">BlackForestCake</option>
+                                    <option value="Cake">ChocolateCake</option>
+                                    <option value="Cake">StrawberryCake</option>
+                                    <option value="Pizza">OnionPizza</option>
+                                    <option value="Pizza">CornChese</option>
+                                    <option value="Pizza">Freshveggie</option>
+                                    <option value="Pizza">Margherita</option>
+                                    <option value="Sweet">Gulab Jamun</option>
+                                    <option value="Sweet">Kaju Katli</option>
+                                    <option value="Sweet">Mango Barfi</option>
+                                </select>
+                                <label for="floatingProduct">Product</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-floating">
+                                <select class="form-control" id="#">
+                                    <option value="">Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label for="floatingProduct">QTY</label>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">                            
+                            <input type="text" class="form-control" id="txtAmount" placeholder="Amount">
+                        </div>
+
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="#" placeholder="Discount">
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="text-end">
+                                <input type="button" class="btn btn-success" value="ADD" />
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="#" placeholder="TotalAmount">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="#" placeholder="BalanceAmount">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="inputOrderDate" class="form-label">Order Date</label>
+                            <input type="date" class="form-control" id="txtTransactionDate" placeholder="Order Date">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="inputDeliveryDate" class="form-label">Delivery Date</label>
+                            <input type="date" class="form-control" id="txtDeliveryDate" placeholder="Delivery Date">
+                        </div>                 
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" onClick="SaveAccount()">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>                       
+
+                    </form>
+                </div>
+            </div>            
+        </section>
+    </div>
+</div>
+    
+
+
+
+
+

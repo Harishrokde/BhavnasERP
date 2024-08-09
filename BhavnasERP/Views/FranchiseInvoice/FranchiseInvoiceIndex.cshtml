@@ -1,0 +1,365 @@
+﻿
+@{
+    ViewBag.Title = "FranchiseInvoiceIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Project-JS/Franchise/FranchiseInvoice.js"></script>
+
+
+
+
+
+
+<div class="card" style="margin-bottom:5px;">
+    <div class="card-body">
+        <table style="margin-top:5px;">
+            <tr>
+                <td>
+                    <span><h3><b>Franchise Invoice</b></h3></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                <b>Franchise : </b><span>   Sankalp Bakery  (Prajwal Gode)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<section>
+    <div>
+        <div class="card p-3">
+            <div class="justify-content-xxl-end text-end">
+            <a type="button" href="/Franchise/FranchiseIndex" class="btn btn-danger">Back</a>
+            </div>
+
+            <div class="row my-2 mt-1">
+                @*<div class="col-md-12 text-end">
+                <input class="btn btn-success" placeholder="Invoice" onclick="Invoicebutton()"><i class="fa fa-user-circle"></i>
+
+            </div>*@
+                @*<div class="col-md-12 text-end">
+                <button class="btn btn-success" placeholder="Invoice" onclick="Invoicebutton()"><i class="bi bi-person-fill"></i></button>
+
+            </div>*@
+            </div>
+
+            <div class="table-responsive">
+                <table id="tblfrachiseInvoice" class="table table-bordered table-hover" style="width:100%">
+                    <thead class="text-white bg-dark">
+                        <tr>
+                            <td class="text-white bg-dark">Sr.No</td>
+                            @*<td class="text-white bg-dark"> Product </td>*@
+                            <td class="text-white bg-dark">Amount</td>
+                            <td class="text-white bg-dark">Total Amount</td>
+                            @*<td class="text-white bg-dark">Amount</td>*@
+                            <td class="text-white bg-dark">Order Date:</td>
+                            <td class="text-white bg-dark">Delivery Date:</td>
+                            <td class="text-white bg-dark"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            @*<td>Onion Extra Chese</td>*@
+                            <td>99</td>
+                            @*<td>05</td>*@
+                            <td>495</td>
+                            <td>04/10/2023</td>
+                            <td>04/10/2023</td>
+                            <td>
+                                <button type='button' class='btn btn-success btn-sm' onclick='FranchiseEdit(" + elementvalue.Id + ")'><i class='bi bi-whatsapp' aria-hidden='true'></i></button>&nbsp;<button type='button' class='btn btn-secondary btn-sm' onclick='PrintOrganization(" + elementvalue.Id + ")'><i class='bi bi-printer'></i></button>&nbsp;<button class="btn btn-success btn-sm" placeholder="Invoice" onclick="ClickInvoice()"><i class='bi bi-eye-fill'></i></button>
+                            </td>
+
+                        </tr>
+                        @*<tr>
+                        <td><a href="/FranchiseOrder/FranchiseOrderIndex" type='button' class='btn btn-dark btn-sm'>Order</a>&nbsp;&nbsp;<a href="/FranchiseAccount/FranchiseAccountIndex" type='button' class='btn btn-dark btn-sm'> Account</a>&nbsp;&nbsp;<a href="/FranchiseInvoice/FranchiseInvoiceIndex" type='button' class='btn btn-dark btn-sm'>Invoice</a></td>
+
+                    </tr>*@
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+       
+    </div>
+</section>
+
+<!--<div id="GetPayment" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">-->
+<!-- Modal content-->
+<!--<div class="modal-content">
+
+    <div class="modal-body">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">FranchiseInvoice</h5>-->
+<!-- Floating Labels Form -->
+<!--<form class="row g-3">
+    <div class="col-md-6">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="#" placeholder="ToatalAmount">
+            <label for="floatingToatalAmount">Total Amount</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="#" placeholder="DeliveryAmount">
+            <label for="floatingDeliveryAmount">Paid Amount</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="#" placeholder="Discount">
+            <label for="floatingDiscount">Balance Amount</label>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="#" placeholder="CGST">
+            <label for="floatingCGST">Transaction No.</label>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="form-floating">
+            <select class="form-control" id="txtPaymentMode">
+                <option value="">Select Payment Method</option>
+                <option value="Cash">Cash</option>
+                <option value="Cheque">Cheque</option>
+                <option value="DD">DD</option>
+                <option value="NEFT">NEFT</option>
+                <option value="RTGS">RTGS</option>
+                <option value="IMPS">IMPS</option>
+                <option value="UPI">UPI</option>
+                <option value="Net Banking">Net Banking</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="PhonePe">PhonePe</option>
+                <option value="GooglePay">GooglePay</option>
+                <option value="Paytm">Paytm</option>
+                <option value="Paypal">Paypal</option>
+            </select>
+            <label for="PaidAmount">Transaction Mode</label>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+    </div>
+</form>-->
+<!-- End floating Labels Form -->
+<!--</div>
+</div>
+</div>
+</div>
+</div>
+</div>-->
+@*Invoicce Form*@
+
+
+
+
+<div id="FranchiseInvoice" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+        -->
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="col-sm-12">
+                <section>
+                    <div>
+                        <div class="card p-3">
+                            @*<div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <td class="text-white bg-dark">Transaction Date</td>
+                                            <td class="text-white bg-dark">Paid Amount </td>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <td class="text-white bg-dark">Transaction Date</td>
+                                            <td class="text-white bg-dark">Paid Amount </td>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            <div class="table-responsive">
+                                <div class="d-flex">
+                                    <div style="max-height:50px; max-width:50px; overflow:hidden;">
+                                        @*<img src="~/Content/images/BhavnasLogo.jpg" class="img-responsive img-fluid" />*@
+
+                                    </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div>
+                                        <span class="d-flex" style="font-size:12px;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <b>Invoice No&nbsp;:&nbsp;<span id="lblSubscriptionId" style="color:red;"> 1140 </span></b>
+
+                                        </span>
+                                        @*<h4 class="d-flex">Bhavna's</h4>*@
+                                        <center>
+                                            <img src="~/Content/images/BhavnasLogo.jpg" class="img-responsive img-fluid" style="height:60px" />
+
+                                        </center>
+
+                                        <p style="font-size:12px; margin-bottom:auto;"><b>Address:&nbsp;</b> Bhavnas Cake Bakery, near Akola Road Bridge, Akola Road, Akot-444101 </p>
+                                        <p style="font-size: 10px;"><b>Mobile:&nbsp;</b>98236077753/982218804&nbsp;<b>Email:&nbsp;bhavnas@bhavnas.com</b></p>
+
+
+                                    </div>
+                                </div>
+
+                                @*<div>
+                                        <table>
+                                            <tr style="font-size:15px;">
+                                                <td><b>Mobile:&nbsp;</b>9766560784</td>
+
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Email:&nbsp;</b>jojarenishid2207@gmail.com</td>
+                                            </tr>
+                                        </table>
+                                    </div>*@
+
+                                <hr style="margin:0rem 0;" />
+                                <div class="d-flex" style="margin-bottom:3px;">
+                                    <div style="font-size:12px;" class="span1  col-sm-5">
+                                        <b>Franchise Name:&nbsp;</b>Sankalp Bakery<br />
+                                        <b>Mobile:&nbsp;</b>9766560784<br />
+                                    </div>
+                                    <div class="col-sm-2">
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    </div>
+
+
+                                    <div style="font-size: 12px;" class=" col-sm-5">
+                                        @*<b>Subscription:&nbsp;</b>Gold<br />*@
+                                        <b>Owner Name:&nbsp;</b>Prajwal Gode<br />
+                                        <b>Order Date:&nbsp;</b>10-09-2023<br />
+                                        <b>Delivery Date:&nbsp;</b>10-09-2023<br />
+                                        <b>Invoice Date:&nbsp;</b>10-09-2023<br />
+                                    </div>
+                                </div>
+
+                                <table id="tblAccount" class="table table-bordered table-hover" style="margin-bottom:-1px;">
+                                    <thead class="text-white bg-dark">
+                                        <tr>
+                                            <td class="text-white bg-dark">Sr.No</td>
+                                            <td class="text-white bg-dark">Product</td>
+                                            <td class="text-white bg-dark">Price </td>
+                                            <td class="text-white bg-dark">Quantity</td>
+                                            <td class="text-white bg-dark">Amount</td>
+
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>Onion extra chese </td>
+                                            <td>99</td>
+                                            <td>05</td>
+                                            <td>495</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>Chocolate Cake</td>
+                                            <td>299</td>
+                                            <td>05</td>
+                                            <td>1495</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td>Vanella Pestry</td>
+                                            <td>99</td>
+                                            <td>05</td>
+                                            <td>495</td>
+                                        </tr>
+                                        @*<tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Total Amount</td>
+                                                <td>2485</td>
+
+                                            </tr>*@
+                                    </tbody>
+
+                                </table>
+
+                                <table class="table table-bordered table-hover">
+                                    <tr style="height:10px;">
+                                        <th>Total Amount:</th>
+                                        <td>2485/-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Delivery Charge:</th>
+                                        <td>100/-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Discount:</th>
+                                        <td>300/-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Amount :</th>
+                                        <td>2285/-</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5"> <b>Addressn  :&nbsp;</b><span> Balaji nagar,near metro station,hingrna road, Nagpur 440016</span></td>
+
+                                    </tr>
+                                </table>
+
+
+
+                                <span class="d-block text-end">
+                                    <span>Bhavnas</span><br />
+                                    <b>Signature</b>
+                                </span>
+                            </div>
+                            <Center>
+                                <button class="btn btn-info"><i class="bi bi-file-pdf-fill">PDF</i></button>
+                                <button class="btn btn-primary print"><i class="bi bi-printer"></i>Print</button>
+                                <a href="/FranchiseInvoice/FranchiseInvoiceIndex" class="btn btn-danger">Back</a>
+                            </Center>
+                        </div>
+                    </div>
+                    <span class="copyright text-center" style="font-size:10px;">Copyright &copy; 2023 Designed By <a href="http://esankalp.com/">eSankalp Software</a></span>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script>
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js('#tblfrachiseInvoice').DataTable();
+
+    });
+</script>

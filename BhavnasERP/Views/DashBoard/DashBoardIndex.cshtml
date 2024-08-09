@@ -1,0 +1,417 @@
+﻿
+@{
+    ViewBag.Title = "DashBoardIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/DashBoard/Dashboard.js"></script>
+<style>
+    #DashbordComplaint {
+        Overflow-y: scroll;
+    }
+
+    scroll {
+        height: 12px;
+    }
+
+    .myClassHey {
+        color: #012790;
+        font-size: 29px;
+    }
+
+    .Name {
+        color: #012790;
+        font-size: 29px;
+    }
+</style>
+
+<section class="section dashboard" style="color:firebrick">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <!-- Customers Card -->
+                <!--<div class="col-xxl-4 col-md-6">
+
+                <div class="card info-card customers-card" style="background-color: #e852ad">
+
+                    <div class="filter">
+                        <a class="icon" href="#" data-bs-toggle="dropdown"><i></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                            <li class="dropdown-header text-start">
+                                <h6>Filter</h6>
+                            </li>
+
+                            <li><a class="dropdown-item" href="#">Today</a></li>
+                            <li><a class="dropdown-item" href="#">This Month</a></li>
+                            <li><a class="dropdown-item" href="#">This Year</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body" style="background-color: #e852ad ">
+                        <h5 class="card-title" style="color:white"> Franchise </h5>
+
+                        <div class="d-flex align-items-center">
+                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h6><span id="CountOfResident1"></span></h6>-->
+                @*<span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>*@
+
+                <!--</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>-->
+                <!-- End Customers Card -->
+
+                <div class="col-xxl-4 col-md-6">
+
+                    <div class="card info-card customers-card" style="background-color:white">
+
+                        @*<div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Filter</h6>
+                                    </li>
+
+                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                                bi bi-shop
+                                bi bi-cart4
+                            </div>*@
+
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: deeppink">Franchise's<span style="color:deeppink"> </span> </h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="background-color: deeppink; color: white">
+                                    <i class=" bi bi-shop"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6><span id="CorpusFundAmount" style="color: deeppink">15</span></h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div><!-- End Customers Card -->
+                <div class="col-xxl-4 col-md-6">
+
+                    <div class="card info-card customers-card" style="background-color:white">
+
+                        @*<div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Filter</h6>
+                                    </li>
+
+                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                            </div>*@
+
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: deeppink">Category </h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="background-color: deeppink; color:white">
+                                    <i class="bi bi-list-check"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6><span id="#" style="color: deeppink">5</span></h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div><!-- End Customers Card -->
+                <!-- Revenue Card -->
+                <!-- Customers Card -->
+                <div class="col-xxl-4 col-md-6">
+
+                    <div class="card info-card customers-card" style="background-color:white">
+
+                        @*<div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Filter</h6>
+                                    </li>
+
+                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                            </div>*@
+
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: deeppink">Products </h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="background-color: deeppink; color: white">
+                                    <i class="bi bi-basket3"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6><span id="#" style="color: deeppink">25</span></h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div><!-- End Customers Card -->
+                <!-- End Customers Card -->
+                <div class="col-xxl-4 col-md-6">
+
+                    <div class="card info-card customers-card" style="background-color:white">
+
+                        @*<div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Filter</h6>
+                                    </li>
+
+                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                            </div>*@
+
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: deeppink">Customer's </h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="background-color: deeppink; color: white">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6><span id="corpusfundamount" style="color: deeppink">10</span></h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div><!-- End Customers Card -->
+                <div class="col-xxl-4 col-md-6">
+
+                    <!--<div class="card info-card customers-card" style="background-color:white">-->
+                    @*<div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>*@
+
+                    <!--<div class="card-body">
+                       <h5 class="card-title" style="color: deeppink">Feedback </h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="background-color: deeppink; color: white">
+                                    <i class="bi bi-clipboard2-check-fill"></i>                                </div>
+                                <div class="ps-3">
+                                    <h6><span id="CorpusFundAmount" style="color: deeppink">6</span></h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>-->
+
+                </div><!-- End Customers Card -->
+                <!-- Revenue Card -->
+                <!-- Customers Card -->
+                <div class="col-xxl-4 col-md-6">
+
+                    <!--<div class="card info-card customers-card" style="background-color:white ">-->
+                    @*<div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>*@
+
+                    <!--<div class="card-body">
+                            <h5 class="card-title" style="color: deeppink">Careers </h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="background-color: deeppink; color: white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-standing" viewBox="0 0 16 16">
+                                        <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM6 6.75v8.5a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v2.75a.75.75 0 0 0 1.5 0v-2.5a.25.25 0 0 1 .5 0Z" />
+                                    </svg>  <i class="bi bi-person-standing"></i>                                </div>
+                                <div class="ps-3">
+                                    <h6><span id="CorpusFundAmount" style="color: deeppink">10</span></h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>-->
+
+                </div><!-- End Customers Card -->
+
+            </div>
+
+
+
+
+
+
+        </div>
+        <!-- Right side columns -->
+        <div class="col-lg-4">
+
+            <!-- News & Updates Traffic -->
+            <div class="card" style="background-color: white">
+                @*<div class="filter">
+                        <a class="icon" href="#" data-bs-toggle="dropdown"><i></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                            <li class="dropdown-header text-start">
+                                <h6>Filter</h6>
+                            </li>
+
+                            <li><a class="dropdown-item" href="#">Today</a></li>
+                            <li><a class="dropdown-item" href="#">This Month</a></li>
+                            <li><a class="dropdown-item" href="#">This Year</a></li>
+                        </ul>
+                    </div>*@
+                <div class="card" style="height: 30rem; background-color:white">
+                    <div class="card-body pb-0" id="DashbordComplaint">
+                        <h5 class="card-title" style="color: deeppink">Todays Order </h5>
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <span>Order.1</span>
+                                <div class="col-sm-6">
+                                    <lable>FranchiseName :</lable><br />
+                                    <span>Delivery Date:</span><br />
+                                    <span>Amount :</span><br />
+                                </div>
+                                <div class="col-sm-6">
+                                    <span>Sankalp Bakery</span><br />
+                                    <span>20/10/2023</span><br />
+                                    <span>500</span><br />
+                                </div>
+                                <hr />
+                                <span>Order.2</span>
+                                <div class="col-sm-6">
+                                    <lable>FranchiseName :</lable><br />
+                                     <span>Delivery Date:</span><br />
+                                    <span>Amount :</span><br />
+                                </div>
+                                <div class="col-sm-6">
+                                    <span>Harsh Bakery</span><br />
+                                    <span>20/10/2023</span><br />
+                                    <span>500</span><br />
+                                </div>
+                                <hr />
+                                <span>Order.3</span>
+                                <div class="col-sm-6">
+                                    <lable>FranchiseName :</lable><br />
+                                    <span>Delivery Date:</span><br />
+                                    <span>Amount :</span><br />
+                                </div>
+                                <div class="col-sm-6">
+                                    <span>Sweet&Salty Bakery</span><br />
+                                    <span>20/10/2023</span><br />
+                                    <span>500</span><br />
+                                </div>
+
+                            </div>
+                            <!--<div class="news">
+        </div>-->
+                            <!-- End sidebar recent posts-->
+
+                        </div><br />
+                        <center>
+                            <a href="/FranchiseProduct/FranchiseProductIndex" class="btn btn-success small" ><i class="bi bi-grid-fill"></i> &nbsp;View Detail</a>
+                        </center>
+                    </div><!-- End News & Updates -->
+
+                </div><!-- End Right side columns -->
+            </div>
+        </div>
+
+</section>
+
+
+
+
+<!--<div id="Viewdetails" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">-->
+
+        <!-- Modal content-->
+        <!--<div class="modal-content">
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body" id="DashbordComplaint">
+                        <h5 class="card-title text-center" style="color: #ed217c">Todays Order </h5>
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6" style="font-weight:bold;">
+                                    <lable>Category Name :</lable><br />
+                                    <span>Product Name :</span><br />
+                                    <span>Weight :</span><br />
+                                    <span>Unit :</span><br />
+                                    <span>Amount :</span><br />
+                                    <span>Mfg Date :</span><br />
+                                    <span>Expiry Date :</span><br />
+                                    <span>Product Image :</span><br />
+                                </div>
+                                <div class="col-sm-6">
+                                    <span>Cake</span><br />
+                                    <span>MixFruit</span><br />
+                                    <span>1/2 Kg.</span><br />
+                                    <span>1</span><br />
+                                    <span>500</span><br />
+                                    <span>30/10/2023</span><br />
+                                    <span>5/11/2023</span><br />
+                                    <span>...</span><br />
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div style="display:flex;justify-content:end">
+
+                <button type="button" class="btn btn-primary" style="background-color:#ed217c; border:none;" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->

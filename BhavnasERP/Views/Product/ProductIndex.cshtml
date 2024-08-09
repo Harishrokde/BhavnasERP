@@ -1,0 +1,236 @@
+﻿
+@{
+    ViewBag.Title = "ProductIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Project-JS/Product/Product.js"></script>
+<script src="~/Content/Project-JS/Customer/Customer.js"></script>
+
+
+<style>
+    .dataTables_filter {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="col-sm-12">
+    <div class="col-sm-12">
+        <div class="row">
+
+            <div class="col-sm-4 text-end">
+                <button class="btn btn-success small" onclick="AddCategory()"><i class="bi bi-grid-fill"></i> &nbsp;Add Category</button>
+            </div>
+            <div class="col-sm-8 text-end">
+                <button class="btn btn-success small" onclick="AddProduct()"><i class="bi bi-grid-fill"></i> &nbsp;Add Product</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="tblCategory" class="table table-bordered table-hover" style="width:100%">
+                            <thead class="text-white bg-dark">
+                                <tr align="center">
+                                    <td class="text-white bg-dark">Category Name</td>
+                                    <td class="text-white bg-dark"> Category Details </td>
+                                    <td class="text-white bg-dark"></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr align="center">
+                                    <td>Cakes</td>
+                                    <td>Chocolates</td>
+                                    <td><button type='button' class='btn btn-success btn-sm' onclick='FranchiseEdit(" + elementvalue.Id + ")'><i class='bi bi-pencil-square' aria-hidden='true'></i></button><button type='button' class='btn btn-info btn-sm' onclick='franchiseDetails(" + elementvalue.Id + ")'><i class='bi bi-eye-fill'></i></button><button type='button' class='btn btn-danger btn-sm' onclick='DeleteOrganization(" + elementvalue.Id + ")'><i class='bi bi-trash-fill'></i></button></td>
+                                </tr>
+                                <tr align="center">
+                                    <td>Presty</td>
+                                    <td>Chocolates</td>
+                                    <td><button type='button' class='btn btn-success btn-sm' onclick='FranchiseEdit(" + elementvalue.Id + ")'><i class='bi bi-pencil-square' aria-hidden='true'></i></button><button type='button' class='btn btn-info btn-sm' onclick='franchiseDetails(" + elementvalue.Id + ")'><i class='bi bi-eye-fill'></i></button><button type='button' class='btn btn-danger btn-sm' onclick='DeleteOrganization(" + elementvalue.Id + ")'><i class='bi bi-trash-fill'></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="tblProduct" class="table table-bordered table-hover" style="width:100%">
+                            <thead class="text-white bg-dark">
+                                <tr align="center">
+                                    <td class="text-white bg-dark"> Id</td>
+                                    <td class="text-white bg-dark"> Name</td>
+                                    <td class="text-white bg-dark"> Weight </td>
+                                    <td class="text-white bg-dark"> Unit </td>
+                                    <td class="text-white bg-dark"> Amount </td>
+                                    <td class="text-white bg-dark"></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr align="center">
+                                    <td>1</td>
+                                    <td>Cake</td>
+                                    <td>500gm</td>
+                                    <td>1</td>
+                                    <td>250rs</td>
+                                    <td><button type='button' class='btn btn-success btn-sm' onclick='FranchiseEdit(" + elementvalue.Id + ")'><i class='bi bi-pencil-square' aria-hidden='true'></i></button><button type='button' class='btn btn-info btn-sm' onclick='franchiseDetails(" + elementvalue.Id + ")'><i class='bi bi-eye-fill'></i></button><button type='button' class='btn btn-danger btn-sm' onclick='DeleteOrganization(" + elementvalue.Id + ")'><i class='bi bi-trash-fill'></i></button></td>
+                                </tr>
+                                <tr align="center">
+                                    <td>2</td>
+                                    <td>Presty</td>
+                                    <td>50gm</td>
+                                    <td>1</td>
+                                    <td>50rs</td>
+                                    <td><button type='button' class='btn btn-success btn-sm' onclick='FranchiseEdit(" + elementvalue.Id + ")'><i class='bi bi-pencil-square' aria-hidden='true'></i></button><button type='button' class='btn btn-info btn-sm' onclick='franchiseDetails(" + elementvalue.Id + ")'><i class='bi bi-eye-fill'></i></button><button type='button' class='btn btn-danger btn-sm' onclick='DeleteOrganization(" + elementvalue.Id + ")'><i class='bi bi-trash-fill'></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="Categoryform" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        -->
+
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <h5 class="card-title">  Category </h5>
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtCategoryName" placeholder=" First Name">
+                            <label for="floatingEmail"> Category Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <textarea type="" class="form-control" id="txtCategoryDetails" placeholder=Last Name"></textarea>
+                            <label for="floatingName"> Category Details</label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-">
+
+                        <input type="checkbox" id="txtIsAvailable" placeholder="Resolved By">
+                        <label for="floatingResolved By">Is Available</label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" onclick="SaveCategory()">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="Productform" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        -->
+
+        @*Modal content*@
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <h5 class="card-title"> Product </h5>
+                <form class="row g-3">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtProductName" placeholder=" Product Name">
+                            <label for="floatingEmail"> Product Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtAmount" placeholder="Amount">
+                            <label for="floatingEmail"> Amount</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtSize" placeholder="Weight">
+                            <label for="floatingEmail">Weight</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <textarea type="text" class="form-control" id="txtDescription" placeholder="Description"></textarea>
+                            <label for="floatingName">Description</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtUnit" placeholder="Unit">
+                            <label for="floatingEmail">Unit</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtMFGDate" placeholder=" MFGDate">
+                            <label for="floatingEmail"> MFG Date</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtExpiryDate" placeholder=" ExpiryDate">
+                            <label for="floatingEmail"> Expiry Date</label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <input type="checkbox" id="txtIsActive" placeholder="Resolved By">
+                        <label for="floatingResolved By">Is Available</label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" onclick="SaveProduct()">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+<script>
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js("#tblProduct").DataTable();
+        js("#tblCategory").DataTable();
+
+    });
+</script>
+
+
+

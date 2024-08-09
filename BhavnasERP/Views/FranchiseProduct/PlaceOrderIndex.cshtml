@@ -1,0 +1,408 @@
+﻿
+@{
+    ViewBag.Title = "PlaceOrderIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script src="~/Content/Project-JS/Product/PlaceOrder.js"></script>
+
+<section class="dashboard">
+    <div class="card" style="margin-bottom:5px;">
+        <div class="card-body">
+            <table style="margin-top:5px;">
+                <tr>
+                    <td>
+                        <span><h3><b>Franchise Order - Delivery Details</b></h3></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+
+                        <b>Franchise : </b><span>   Sankalp Bakery  (Prajwal Gode)</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="card">
+
+                <div class="card-body">
+                    <form class="row g-3">
+                        <h5 class="card-title">Order Details :</h5>
+                        <div class="col-sm-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="#" placeholder="Amount">
+                                <label for="floatingAmount">Amount</label>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="#" placeholder="DeliveryAmount">
+                                <label for="floatingDeliveryAmount">Delivery Charges</label>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="#" placeholder="Discount">
+                                <label for="floatingDiscount">Discount</label>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="#" placeholder="TotalAmount">
+                                <label for="floatingTotalAmount">Total Amount</label>
+                            </div>
+                        </div>
+                        <h5 class="card-title">Address Details :</h5>
+
+                        <div class="col-6">
+
+                            <div class="form-floating">
+                                <textarea class="form-control" style="height:130px;" placeholder="Address" id="floatingTextarea" style="height: 100px;"></textarea>
+                                <label for="floatingTextarea">Address</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="#" placeholder="City">
+                                        <label for="floatingCity">City</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="floatingSelect" aria-label="State">
+                                            <option selected>Maharashtra</option>
+                                            <option value="1">MP</option>
+                                            <option value="2">Chattisgarh</option>
+                                        </select>
+                                        <label for="floatingSelect">State</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingZip" placeholder="Zip">
+                                    <label for="floatingZip">Zip</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <h5 class="card-title">Delivery Details :</h5>
+                        @*<div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Person" />
+                                <label for="floatingTextarea">Delivery Person</label>
+                            </div>*@
+                        <div class="col-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="#" placeholder="delivery by">
+                                <label for="floatingdelivery by">delivery Person</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="#" placeholder="Delivery Contact">
+                                <label for="floatingDelivery Contact">Delivery Contact</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" id="#" placeholder="Delivery Date">
+                                <label for="floatingDelivery Date">Delivery Date</label>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <input type="button" class="btn btn-success" value="Get Payment" />
+                            @*<button onclick="GetInvoice()" type="submit" class="btn btn-success">Get Payment</button>*@
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-body">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div class="btn-text-left">
+
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6"></div>
+                                <div class="col-sm-6">
+                                    <div class="btn-text-right">
+                                        <button onclick="GetPrint()" type="button" class="btn btn-success">Get Print</button>
+                                        <a type="button" class="btn btn-danger" href="/FranchiseProduct/FranchiseProductIndex">Back</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <h5 class="card-title">Payment Details</h5>
+                        <!-- Floating Labels Form -->
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="#" placeholder="TotalAmount">
+                                    <label for="floatingToatalAmount">Total Amount</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="#" placeholder="DeliveryAmount">
+                                    <label for="floatingDeliveryAmount">Paid Amount</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="#" placeholder="Discount">
+                                    <label for="floatingDiscount">Balance Amount</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="#" placeholder="CGST">
+                                    <label for="floatingCGST">Transaction No.</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-floating">
+                                    <select class="form-control" id="txtPaymentMode">
+                                        <option value="">Select Payment Method</option>
+                                        <option value="Cash">Cash</option>
+                                        <option value="Cheque">Cheque</option>
+                                        <option value="DD">DD</option>
+                                        <option value="NEFT">NEFT</option>
+                                        <option value="RTGS">RTGS</option>
+                                        <option value="IMPS">IMPS</option>
+                                        <option value="UPI">UPI</option>
+                                        <option value="Net Banking">Net Banking</option>
+                                        <option value="Debit Card">Debit Card</option>
+                                        <option value="Credit Card">Credit Card</option>
+                                        <option value="PhonePe">PhonePe</option>
+                                        <option value="GooglePay">GooglePay</option>
+                                        <option value="Paytm">Paytm</option>
+                                        <option value="Paypal">Paypal</option>
+                                    </select>
+                                    <label for="PaidAmount">Transaction Mode</label>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                @*<a href="/FranchiseInvoice/ViewInvoiceIndex" type="Submit" class="btn btn-success">Get Print</a>*@
+
+                            </div>
+                        </form><!-- End floating Labels Form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>@*POP UP invoice*@
+
+
+<div id="GetPrints" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        -->
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="col-sm-12">
+                <section>
+                    <div>
+                        <div class="card p-3">
+                            @*<div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <td class="text-white bg-dark">Transaction Date</td>
+                                            <td class="text-white bg-dark">Paid Amount </td>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <td class="text-white bg-dark">Transaction Date</td>
+                                            <td class="text-white bg-dark">Paid Amount </td>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            <div class="table-responsive">
+                                <div class="d-flex">
+                                    <div style="max-height:50px; max-width:50px; overflow:hidden;">
+                                        @*<img src="~/Content/images/BhavnasLogo.jpg" class="img-responsive img-fluid" />*@
+
+                                    </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div>
+                                        <span class="d-flex" style="font-size:12px;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <b>Invoice No&nbsp;:&nbsp;<span id="lblSubscriptionId" style="color:red;"> 1140 </span></b>
+
+                                        </span>
+                                        @*<h4 class="d-flex">Bhavna's</h4>*@
+                                        <center>
+                                            <img src="~/Content/images/BhavnasLogo.jpg" class="img-responsive img-fluid" style="height:60px" />
+
+                                        </center>
+
+                                        <p style="font-size:12px; margin-bottom:auto;"><b>Address:&nbsp;</b> Bhavnas Cake Bakery, near Akola Road Bridge, Akola Road, Akot-444101 </p>
+                                        <p style="font-size: 10px;"><b>Mobile:&nbsp;</b>98236077753/982218804&nbsp;<b>Email:&nbsp;bhavnas@bhavnas.com</b></p>
+
+
+                                    </div>
+                                </div>
+
+                                @*<div>
+                                        <table>
+                                            <tr style="font-size:15px;">
+                                                <td><b>Mobile:&nbsp;</b>9766560784</td>
+
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Email:&nbsp;</b>jojarenishid2207@gmail.com</td>
+                                            </tr>
+                                        </table>
+                                    </div>*@
+
+                                <hr style="margin:0rem 0;" />
+                                <div class="d-flex" style="margin-bottom:3px;">
+                                    <div style="font-size:12px;" class="span1  col-sm-5">
+                                        <b>Franchise Name:&nbsp;</b>Sankalp Bakery<br />
+                                        <b>Mobile:&nbsp;</b>9766560784<br />
+                                    </div>
+                                    <div class="col-sm-2">
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    </div>
+
+
+                                    <div style="font-size: 12px;" class=" col-sm-5">
+                                        @*<b>Subscription:&nbsp;</b>Gold<br />*@
+                                        <b>Owner Name:&nbsp;</b>Prajwal Gode<br />
+                                        <b>Order Date:&nbsp;</b>10-09-2023<br />
+                                        <b>Delivery Date:&nbsp;</b>10-09-2023<br />
+                                        <b>Invoice Date:&nbsp;</b>10-09-2023<br />
+                                    </div>
+                                </div>
+
+                                <table id="tblAccount" class="table table-bordered table-hover" style="margin-bottom:-1px;">
+                                    <thead class="text-white bg-dark">
+                                        <tr>
+                                            <td class="text-white bg-dark">Sr.No</td>
+                                            <td class="text-white bg-dark">Product</td>
+                                            <td class="text-white bg-dark">Price </td>
+                                            <td class="text-white bg-dark">Quantity</td>
+                                            <td class="text-white bg-dark">Amount</td>
+
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>Onion extra chese </td>
+                                            <td>99</td>
+                                            <td>05</td>
+                                            <td>495</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>Chocolate Cake</td>
+                                            <td>299</td>
+                                            <td>05</td>
+                                            <td>1495</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td>Vanella Pestry</td>
+                                            <td>99</td>
+                                            <td>05</td>
+                                            <td>495</td>
+                                        </tr>
+                                        @*<tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Total Amount</td>
+                                                <td>2485</td>
+
+                                            </tr>*@
+                                    </tbody>
+
+                                </table>
+
+                                <table class="table table-bordered table-hover">
+                                    <tr style="height:10px;">
+                                        <th>Total Amount:</th>
+                                        <td>2485/-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Delivery Charge:</th>
+                                        <td>100/-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Discount:</th>
+                                        <td>300/-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Amount :</th>
+                                        <td>2285/-</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5"> <b>Addressn  :&nbsp;</b><span> Balaji nagar,near metro station,hingrna road, Nagpur 440016</span></td>
+
+                                    </tr>
+                                </table>
+
+
+
+                                <span class="d-block text-end">
+                                    <span>Bhavnas</span><br />
+                                    <b>Signature</b>
+                                </span>
+                            </div>
+                            <Center>
+                                <button class="btn btn-info"><i class="bi bi-file-pdf-fill">PDF</i></button>
+                                <button class="btn btn-primary print"><i class="bi bi-printer"></i>Print</button>
+                                <a href="/FranchiseInvoice/FranchiseInvoiceIndex" data-mdb-dismiss="modal"class="btn btn-danger">Back</a>
+                                <a href="/FranchiseInvoice/FranchiseInvoiceIndex" data-mdb-dismiss="modal"class="btn btn-secondary">Confirm Order & convert to Invoice</a>
+                            </Center>
+                        </div>
+                    </div>
+                    <span class="copyright text-center" style="font-size:10px;">Copyright &copy; 2023 Designed By <a href="http://esankalp.com/">eSankalp Software</a></span>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

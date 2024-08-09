@@ -1,0 +1,224 @@
+﻿
+@{
+    ViewBag.Title = "FranchiseAccountIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="row my-2 mt-1" id="Dontprint">
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-sm-6">
+                </div>
+                <div class="col-sm-6  text-end">
+                    <a type="button" href="/Franchise/FranchiseIndex" class="btn btn-danger">Back</a>
+                    <button onclick="AddUser()" class="btn btn-success"><i class="bi bi-whatsapp"></i>Whatsapp</button>
+                    <button onclick="AddUser()" class="btn btn-info"><i class="bi bi-file-pdf-fill">PDF</i></button>
+                    <button onclick="printDiv(print)" class="btn btn-primary print"><i class="bi bi-printer"></i>Print</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-sm-6" id="Dontprint">
+        <section>
+            <div>
+                <div class="card p-3">
+
+                    <form class="row g-3">
+
+
+
+
+                        @*<div class="col-md-6">
+                                <label>User Name</label>
+                                <span type="text" class="form-control" id="UserId"></span>
+                            </div>*@
+                        <div class="col-md-6">
+                            <input type="hidden" id="hdnId" />
+                            @*<label>Subscription</label>*@
+                            @*<select type="text" class="form-control" id="txtSubscripationId"></select>*@
+                            <input type="text" value="@ViewBag.UserId" id="txtUserId" hidden="hidden" />
+                            @*<input type="hidden" class="form-control" id="txtSubscription" placeholder="Enter Your Subscripation" hiden>*@
+                            <input type="text" class="form-control" id="txtSubscription" placeholder="Enter Your Subscripation" hidden>
+                        </div>
+                        <div class="col-md-6">
+                            @*<label for="inputTotalAmount" class="form-label">Total Amount</label>*@
+                            <input type="text" class="form-control" id="txtamount" placeholder=" Total Amount" hidden>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputTotalAmount" class="form-label">Credit Amount</label>
+                            <input type="text" class="form-control" id="txtCuruntBalanceAmount" placeholder="Credit Amount">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputPaidAmount" class="form-label">Debit Amount</label>
+                            <input type="text" class="form-control" id="txtCuruntAmount" placeholder="Debit Amounts">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="inputBalanceAmount" class="form-label">Balance Amount</label>
+                            <input type="text" class="form-control" id="txtBalanceAmount" placeholder=" Balance Amount" disabled>
+                        </div>
+
+                        @*<div class="col-md-4">
+                                <label for="inputTransactionDate" class="form-label">Transaction Date</label>
+                                <input type="date" class="form-control" id="txtTransactionDate" placeholder="Please Enter Transaction Date">
+                            </div>*@
+
+                        <div class="col-md-6">
+                            <label for="inputPaymentmode" class="form-label">Payment mode</label>
+                            <select id="txtPaymentmode" class="form-control">
+                                <option>Cash</option>
+                                <option>UPI</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="inputTransactionNo" class="form-label">Transaction No</label>
+                            <input type="text" class="form-control" id="txtTransactionNo" placeholder="Please Enter Transaction No">
+                        </div>
+
+                        @*<label for="inputCreatedDate" class="form-label">CreatedDate</label>
+                            <input type="date" class="form-control" id="txtCreatedDate" placeholder="Please Enter Created Date">*@
+                        @*<div class="col-md-12">
+                                <label for="inputIsActive" class="form-label">IsActive</label>
+                                <input type="checkbox" id="txtIsActive" />
+                            </div>*@
+
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" onClick="SaveAccount()">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+
+                        <!-- End Multi Columns Form -->
+
+
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-sm-6">
+        <section>
+            <div>
+                <div class="card p-3">
+                    @*<div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <td class="text-white bg-dark">Transaction Date</td>
+                                    <td class="text-white bg-dark">Paid Amount </td>
+                                </div>
+                                <div class="col-sm-6">
+                                    <td class="text-white bg-dark">Transaction Date</td>
+                                    <td class="text-white bg-dark">Paid Amount </td>
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="table-responsive">
+                        <div class="d-flex">
+                            <div style="max-height:50px; max-width:50px; overflow:hidden;">
+                                @*<img src="~/Content/images/BhavnasLogo.jpg" class="img-responsive img-fluid" />*@
+
+                            </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div>
+                                <span class="d-flex" style="font-size:12px;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Receipt No:<span id="lblSubscriptionId"></span></b>
+
+                                </span>
+                                @*<h4 class="d-flex">Bhavna's</h4>*@
+                            <center>
+                                <img src="~/Content/images/BhavnasLogo.jpg" class="img-responsive img-fluid" style="height:60px"/>
+
+                            </center>
+
+                                <p style="font-size:12px; margin-bottom:auto;"><b>Address:&nbsp;</b> Bhavnas Cake Bakery, near Akola Road Bridge, Akola Road, Akot-444101 </p>
+                                <p style="font-size: 10px;"><b>Mobile:&nbsp;</b>98236077753/982218804&nbsp;<b>Email:&nbsp;bhavnas@bhavnas.com</b></p>
+
+
+                            </div>
+                        </div>
+
+                        @*<div>
+                                <table>
+                                    <tr style="font-size:15px;">
+                                        <td><b>Mobile:&nbsp;</b>9766560784</td>
+
+                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Email:&nbsp;</b>jojarenishid2207@gmail.com</td>
+                                    </tr>
+                                </table>
+                            </div>*@
+
+                        <hr style="margin:0rem 0;" />
+                        <div class="d-flex" style="margin-bottom:3px;">
+                            <div style="font-size:12px;" class="span1  col-sm-5">
+                                <b>MemberId:&nbsp;</b>1234<br />
+                                <b>Name:&nbsp;</b>Prajwal Gode<br />
+                                <b>Mobile:&nbsp;</b>9766560784<br />
+                            </div>
+                            <div class="col-sm-2">
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            </div>
+
+
+                            <div style="font-size: 12px;" class=" col-sm-5">
+                                <b>Subscription:&nbsp;</b>Gold<br />
+                                <b>Joining Date:&nbsp;</b>07-09-2023<br />
+                                <b>Due Date:&nbsp;</b>10-09-2023<br />
+                            </div>
+                        </div>
+
+                        <table id="tblAccount" class="table table-bordered table-hover" style="margin-bottom:-1px;">
+                            <thead class="text-white bg-dark">
+                                <tr>
+                                    <td class="text-white bg-dark">Transaction Date</td>
+                                    <td class="text-white bg-dark">Balance Amount</td>
+                                    <td class="text-white bg-dark">Paid Amount </td>
+
+
+                                </tr>
+                            </thead>
+
+                            <tbody></tbody>
+
+                        </table>
+
+                        <table class="table table-bordered table-hover">
+                            <tr style="height:10px;">
+                                <th>Total Amount:</th>
+                                <td>5000/-</td>
+                            </tr>
+                            <tr>
+                                <th>Discount:</th>
+                                <td>500/-</td>
+                            </tr>
+                            <tr>
+                                <th>Amount:</th>
+                                <td>500/-</td>
+                            </tr>
+                        </table>
+
+
+                        <span class="d-block text-end">
+                            <span>Bhavnas</span><br />
+                            <b>Signature</b>
+                        </span>
+                    </div>
+                    <span class="copyright text-center" style="font-size:10px;">Copyright &copy; 2023 Design By <a href="http://esankalp.com/">eSankalp Software</a></span>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+</div>

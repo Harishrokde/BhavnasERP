@@ -1,0 +1,257 @@
+﻿
+@{
+    ViewBag.Title = "CustomerInvoiceIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Project-JS/Customer/CustmerInvoice.js"></script>
+
+<div class="card" style="margin-bottom:5px;">
+    <div class="card-body">
+        <table style="margin-top:5px;">
+            <tr>
+                <td>
+                    <span><h3><b>Customer Invoice</b></h3></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                    <b>Franchise : </b><span>   Sankalp Bakery  (Prajwal Gode)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<section>
+    <div>
+        <div class="card p-4">
+            <div class="row my-2 mt-1">
+
+            </div>
+            <div class="table-responsive">
+                <table id="tblCostomerInvoice" class="table table-bordered table-hover" style="width:100%">
+                    <thead class="text-white bg-dark">
+                        <tr>
+                            <td class="text-white bg-dark">Sr.No</td>
+                            <td class="text-white bg-dark">Customer Name</td>
+                            <td class="text-white bg-dark">Total Amount</td>
+                            <td class="text-white bg-dark">Order Date:</td>
+                            <td class="text-white bg-dark">Delivery Date:</td>
+                            <td class="text-white bg-dark"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>BhanuPrasad</td>
+                            <td>495</td>
+                            <td>04/10/2023</td>
+                            <td>04/10/2023</td>
+                            <td>
+                                <button type='button' class='btn btn-success btn-sm' onclick='DeleteOrganization(" + elementvalue.Id + ")'><i class='bi bi-whatsapp'></i></button>&nbsp;<button type='button' class='btn btn-success btn-sm' onclick='FranchiseEdit(" + elementvalue.Id + ")'><i class='bi bi-printer' aria-hidden='true'></i></button>&nbsp;&nbsp;&nbsp;<button class="btn btn-success btn-sm" placeholder="Invoice" onclick="ClickInvoice()"><i class="bi bi-eye-fill"></i></button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+</section>
+
+
+
+
+<div id="CustmerInvoice" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            
+
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="invoice-title">
+                            <h4 class="float-end font-size-15">@*Invoice #DS0204 <span class="badge bg-success font-size-12 ms-2">Paid</span>*@</h4>
+                            <div class="mb-4">
+                                <img src="~/Content/images/BhavnasLogo.jpg" class="img-responsive img-fluid" style="height:60px" />
+                            </div>
+                            <div class="text-muted">
+                                <p class="mb-1">Bhavnas Cake and bakery</p>
+                                <p class="mb-1">Akola Rd, Appaswami Colony</p>
+                                <p class="mb-1">Akot, Maharashtra 444101</p>
+                                @*<p class="mb-1"><i class="uil uil-envelope-alt me-1"></i> xyz@987.com</p>
+                <p><i class="uil uil-phone me-1"></i> 012-345-6789</p>*@
+                            </div>
+                        </div>
+                        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; opacity: 0.1; pointer-events: none;">
+                            <img src="~/Content/images/BhavnasLogo.jpg" alt="Watermark" />
+                        </div>
+                        <hr class="my-4">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="text-muted">
+                                    <h5 class="font-size-16 mb-3">Billed To:</h5>
+                                    <h5 class="font-size-15 mb-2">Harish Rokde</h5>
+                                    <p class="mb-1">Shrikrishna Nagar</p>
+                                    <p class="mb-1">harishdivi@outlook.com</p>
+                                    <p>001-234-5678</p>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-sm-6">
+                                <div class="text-muted text-sm-end">
+                                    <div>
+                                        <h5 class="font-size-15 mb-1">Invoice No:</h5>
+                                        <p>#DZ0112</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h5 class="font-size-15 mb-1">Invoice Date:</h5>
+                                        <p>12 Oct, 2020</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h5 class="font-size-15 mb-1">Order No:</h5>
+                                        <p>#1123456</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="py-2">
+                            <h5 class="font-size-15">Order Summary</h5>
+
+                            <div class="table-responsive">
+                                <table class="table align-middle table-nowrap table-centered mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 70px;">No.</th>
+                                            <th>Product</th>
+                                            <th>Kg</th>
+                                            <th>Price/Kg</th>
+                                            <th>Quantity</th>
+                                            <th>Discount</th>
+                                            <th class="text-end" style="width: 120px;">Total</th>
+                                        </tr>
+                                    </thead><!-- end thead -->
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">01</th>
+                                            <td>
+                                                <div>
+                                                    <h5 class="text-truncate font-size-14 mb-1">Vanila Cake</h5>
+                                                </div>
+                                            </td>
+                                            <td> 1 </td>
+                                            <td> ₹ 500 </td>
+                                            <td> 1 </td>
+                                            <td> 10% </td>
+                                            <td class="text-end"> 450</td>
+                                        </tr>
+                                        <!-- end tr -->
+                                        <tr>
+                                            <th scope="row">02</th>
+                                            <td>
+                                                <div>
+                                                    <h5 class="text-truncate font-size-14 mb-1">Straberry Cake</h5>
+                                                </div>
+                                            </td>
+                                            <td> 1 </td>
+                                            <td> ₹ 700 </td>
+                                            <td> 1 </td>
+                                            <td> 10% </td>
+                                            <td class="text-end"> 630</td>
+                                        </tr>
+                                        <!-- end tr -->
+                                        <tr>
+                                            <th scope="row" colspan="6" class="text-end">Sub Total</th>
+                                            <td class="text-end"> ₹ 1080</td>
+                                        </tr>
+                                        <!-- end tr -->
+                                        <tr>
+                                            <th scope="row" colspan="6" class="border-0 text-end">
+                                                Discount :
+                                            </th>
+                                            <td class="border-0 text-end">-  50</td>
+                                        </tr>
+                                        <!-- end tr -->
+                                        <tr>
+                                            <th scope="row" colspan="6" class="border-0 text-end">
+                                                Shipping Charge :
+                                            </th>
+                                            <td class="border-0 text-end"> 20.00</td>
+                                        </tr>
+                                        <!-- end tr -->
+                                        <tr>
+                                            <th scope="row" colspan="6" class="border-0 text-end">
+                                                Tax
+                                            </th>
+                                            <td class="border-0 text-end"> 12.00</td>
+                                        </tr>
+                                        <!-- end tr -->
+                                        <tr>
+                                            <th scope="row" colspan="6" class="border-0 text-end">Total</th>
+                                            <td class="border-0 text-end"><p style="font-weight: bold;"> ₹ 1052.00 </p></td>
+                                        </tr>
+                                        <!-- end tr -->
+                                    </tbody><!-- end tbody -->
+                                </table><!-- end table -->
+                            </div><!-- end table responsive -->
+                            @*<div class="d-print-none mt-4">
+                <div class="float-end">
+                    <a href="javascript:window.print()" class="btn btn-success me-1"><i class="fa fa-print"></i></a>
+                    <a href="#" class="btn btn-primary w-md">Send</a>
+                </div>
+            </div>*@
+                        </div>
+
+                        @*<table class="table table-bordered table-hover">
+        </table>
+        <center>
+            <div class="col-sm-12">
+                <button onclick="AddUser()" class="btn btn-success"><i class="bi bi-whatsapp"></i>Whatsapp</button>
+                <button onclick="AddUser()" class="btn btn-info"><i class="bi bi-file-pdf-fill">PDF</i></button>
+                <button onclick="printDiv(print)" class="btn btn-primary print"><i class="bi bi-printer"></i>Print</button>
+                <a href="/FranchiseProduct/PlaceOrderIndex" class="btn btn-primary print">Payment</a>
+            </div>
+        </center>
+        <br />
+        <br />
+        <br />
+
+        <center>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </center>*@
+                        <br />
+                        <br />
+                        <span class="d-block text-end">
+                            <span>Bhavnas</span><br />
+                            <b>Signature</b>
+                        </span>
+
+                    </div>
+                    <span class="copyright text-center" style="font-size:10px;">Copyright &copy; 2023 Design By <a href="http://esankalp.com/">eSankalp Software</a></span>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+

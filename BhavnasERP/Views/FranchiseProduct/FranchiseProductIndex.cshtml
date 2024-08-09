@@ -1,0 +1,256 @@
+﻿
+@{
+    ViewBag.Title = "FranchiseProductIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Project-JS/Product/Product.js"></script>
+<style>
+    .btn-text-right {
+        text-align: right;
+    }
+</style>
+
+<div class="card" style="margin-bottom:5px;">
+    <div class="card-body">
+        <table style="margin-top:5px;">
+            <tr>
+                <td>
+                    <span><h3><b> Franchise Order - Add Product</b></h3></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                    <b>Franchise : </b><span>   Sankalp Bakery  (Prajwal Gode)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-sm-4" id="Dontprint">
+        <section>
+            <div>
+                <div class="card p-3">
+
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <div class="col-sm-4">
+                                <div class="form-floating">
+                                    <select class="form-control" id="#">
+                                        <option value="">Select Category</option>
+                                        <option value="Cake">Cake</option>
+                                        <option value="Pizza">Pizza</option>
+                                        <option value="Sweet">Sweets</option>
+                                    </select>
+                                    <label for="Category">Category</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <select class="form-control" id="#">
+                                    <option value="">Select Product</option>
+                                    <option value="Cake">BlackForestCake</option>
+                                    <option value="Cake">ChocolateCake</option>
+                                    <option value="Cake">StrawberryCake</option>
+                                    <option value="Pizza">OnionPizza</option>
+                                    <option value="Pizza">CornChese</option>
+                                    <option value="Pizza">Freshveggie</option>
+                                    <option value="Pizza">Margherita</option>
+                                    <option value="Sweet">Gulab Jamun</option>
+                                    <option value="Sweet">Kaju Katli</option>
+                                    <option value="Sweet">Mango Barfi</option>
+                                </select>
+                                <label for="floatingProduct">Product</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="#" placeholder="Amount">
+                                <label for="floatingDiscount">Amount</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="#" placeholder="Quantity">
+                                <label for="floatingCGST">Quantity</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="#" placeholder="Total Amount">
+                                <label for="floatingCGST">Total Amount</label>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success" onClick="SaveAccount()">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-sm-8">
+        <section>
+            <div>
+                <div class="card p-3">
+                    <div class="btn-text-right">
+                        @*<button type="button" class="btn btn-primary" onclick="PlaceOrder()">Place Order</button>*@
+                        <a type="button" class="btn btn-danger" href="/Franchise/FranchiseIndex">Back</a>
+                        <a type="button" class="btn btn-success" href="/FranchiseProduct/PlaceOrderIndex">Place Order</a>
+                    </div>
+                    <div class="table-responsive">
+
+                        <table id="tblAccount" class="table table-bordered table-hover" style="margin-bottom:-1px;">
+                            <thead class="text-white bg-dark">
+                                <tr>
+                                    <td class="text-white bg-dark">Category</td>
+                                    <td class="text-white bg-dark">Product</td>
+                                    <td class="text-white bg-dark">Amount </td>
+                                    <td class="text-white bg-dark">Quantity </td>
+                                    <td class="text-white bg-dark">Total Amount </td>
+
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Pizza</td>
+                                    <td>Onion Extra Chese</td>
+                                    <td> 99</td>
+                                    <td>05</td>
+                                    <td>495</td>
+                                </tr>
+                                <tr>
+
+                                    <td>Cake</td>
+                                    <td>Chocolate</td>
+                                    <td> 299</td>
+                                    <td>05</td>
+                                    <td>1495</td>
+                                </tr>
+                                <tr>
+                                    <td>Pestry</td>
+                                    <td>Vanella</td>
+                                    <td> 99</td>
+                                    <td>05</td>
+                                    <td>495</td>
+                                </tr>
+
+                            </tbody>
+                            <tr>
+                                <td>Total Amount</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>2485</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="btn-text-right">
+
+
+                </div>
+                @*//Button*@
+            </div>
+        </section>
+    </div>
+
+</div>
+
+
+
+
+
+@*Franchise Invoice*@
+
+<div id="GetPayment" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <h5 class="card-title">Order Details</h5>
+                <!-- Floating Labels Form -->
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="date" class="form-control" id="#" placeholder="InvoiceDate">
+                            <label for="floatingInvoiceDate">InvoiceDate</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="#" placeholder="ToatalAmount">
+                            <label for="floatingToatalAmount">Total Amount</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="#" placeholder="DeliveryAmount">
+                            <label for="floatingDeliveryAmount">Paid Amount</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="#" placeholder="Discount">
+                            <label for="floatingDiscount">Balance Amount</label>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="#" placeholder="CGST">
+                            <label for="floatingCGST">Transaction No.</label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <select class="form-control" id="txtPaymentMode">
+                                <option value="">Select Payment Method</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Cheque">Cheque</option>
+                                <option value="DD">DD</option>
+                                <option value="NEFT">NEFT</option>
+                                <option value="RTGS">RTGS</option>
+                                <option value="IMPS">IMPS</option>
+                                <option value="UPI">UPI</option>
+                                <option value="Net Banking">Net Banking</option>
+                                <option value="Debit Card">Debit Card</option>
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="PhonePe">PhonePe</option>
+                                <option value="GooglePay">GooglePay</option>
+                                <option value="Paytm">Paytm</option>
+                                <option value="Paypal">Paypal</option>
+                            </select>
+                            <label for="PaidAmount">Transaction Mode</label>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </form><!-- End floating Labels Form -->
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "ViewInvoiceIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+
+@*// View Invoice *@
+
+<h3><b>Invoice Details</b></h3>
+<div class=" col-sm-8">
+    <cneter>
+        <section>
+            <div>
+                <div class="card p-3">
+                    @*<div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <td class="text-white bg-dark">Transaction Date</td>
+                                <td class="text-white bg-dark">Paid Amount </td>
+                            </div>
+                            <div class="col-sm-6">
+                                <td class="text-white bg-dark">Transaction Date</td>
+                                <td class="text-white bg-dark">Paid Amount </td>
+                            </div>
+                        </div>
+                    </div>*@
+                    <div class="table-responsive">
+                        <div class="d-flex">
+                            <div style="max-height:50px; max-width:50px; overflow:hidden;">
+                                @*<img src="~/Content/images/BhavnasLogo.jpg" class="img-responsive img-fluid" />*@
+
+                            </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div>
+                                <span class="d-flex" style="font-size:12px;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <b>Invoice No&nbsp;:&nbsp;<span id="lblSubscriptionId" style="color:red;"> 1140 </span></b>
+
+                                </span>
+                                @*<h4 class="d-flex">Bhavna's</h4>*@
+                                <center>
+                                    <img src="~/Content/images/BhavnasLogo.jpg" class="img-responsive img-fluid" style="height:60px" />
+
+                                </center>
+
+                                <p style="font-size:12px; margin-bottom:auto;"><b>Address:&nbsp;</b> Bhavnas Cake Bakery, near Akola Road Bridge, Akola Road, Akot-444101 </p>
+                                <p style="font-size: 10px;"><b>Mobile:&nbsp;</b>98236077753/982218804&nbsp;<b>Email:&nbsp;bhavnas@bhavnas.com</b></p>
+
+
+                            </div>
+                        </div>
+
+                        @*<div>
+                            <table>
+                                <tr style="font-size:15px;">
+                                    <td><b>Mobile:&nbsp;</b>9766560784</td>
+
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Email:&nbsp;</b>jojarenishid2207@gmail.com</td>
+                                </tr>
+                            </table>
+                        </div>*@
+
+                        <hr style="margin:0rem 0;" />
+                        <div class="d-flex" style="margin-bottom:3px;">
+                            <div style="font-size:12px;" class="span1  col-sm-5">
+                                <b>Franchise Name:&nbsp;</b>Sankalp Bakery<br />
+                                <b>Mobile:&nbsp;</b>9766560784<br />
+                            </div>
+                            <div class="col-sm-2">
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            </div>
+
+
+                            <div style="font-size: 12px;" class=" col-sm-5">
+                                @*<b>Subscription:&nbsp;</b>Gold<br />*@
+                                <b>Owner Name:&nbsp;</b>Prajwal Gode<br />
+                                <b>Order Date:&nbsp;</b>10-09-2023<br />
+                                <b>Delivery Date:&nbsp;</b>10-09-2023<br />
+                            </div>
+                        </div>
+
+                        <table id="tblAccount" class="table table-bordered table-hover" style="margin-bottom:-1px;">
+                            <thead class="text-white bg-dark">
+                                <tr>
+                                    <td class="text-white bg-dark">Sr.No</td>
+                                    <td class="text-white bg-dark">Product</td>
+                                    <td class="text-white bg-dark">Price </td>
+                                    <td class="text-white bg-dark">Quantity</td>
+                                    <td class="text-white bg-dark">Amount</td>
+
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td>Onion extra chese </td>
+                                    <td>99</td>
+                                    <td>05</td>
+                                    <td>495</td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td>Chocolate Cake</td>
+                                    <td>299</td>
+                                    <td>05</td>
+                                    <td>1495</td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>Vanella Pestry</td>
+                                    <td>99</td>
+                                    <td>05</td>
+                                    <td>495</td>
+                                </tr>
+                                @*<tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Total Amount</td>
+                                    <td>2485</td>
+
+                                </tr>*@
+                            </tbody>
+
+                        </table>
+
+                        <table class="table table-bordered table-hover">
+                            <tr style="height:10px;">
+                                <th>Total Amount:</th>
+                                <td>2485/-</td>
+                            </tr>
+                            <tr>
+                                <th>Delivery Charge:</th>
+                                <td>100/-</td>
+                            </tr>
+                            <tr>
+                                <th>Discount:</th>
+                                <td>300/-</td>
+                            </tr>
+                            <tr>
+                                <th>Amount :</th>
+                                <td>2285/-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5"> <b>Addressn  :&nbsp;</b><span> Balaji nagar,near metro station,hingrna road, Nagpur 440016</span></td>
+
+                            </tr>
+                        </table>
+
+
+
+                        <span class="d-block text-end">
+                            <span>Bhavnas</span><br />
+                            <b>Signature</b>
+                        </span>
+                    </div>
+                    <Center>
+                        <button class="btn btn-info"><i class="bi bi-file-pdf-fill">PDF</i></button>
+                        <button class="btn btn-primary print"><i class="bi bi-printer"></i>Print</button>
+                        <a href="/FranchiseInvoice/FranchiseInvoiceIndex" class="btn btn-danger">Back</a>
+                    </Center>
+                </div>
+            </div>
+            <span class="copyright text-center" style="font-size:10px;">Copyright &copy; 2023 Designed By <a href="http://esankalp.com/">eSankalp Software</a></span>
+
+        </section>
+    </cneter>
+   
+
+</div>

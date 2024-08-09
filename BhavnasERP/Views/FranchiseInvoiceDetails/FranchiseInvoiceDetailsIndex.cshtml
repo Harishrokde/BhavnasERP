@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "FranchiseInvoiceDetailsIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card" style="margin-bottom: 10px;">
+        <div class="card-body">
+            <table style="margin-top: 10px;">
+                <tr>
+                    <td><b>Franchise : </b><span>   Sankalp Bakery  (Prajwal Gode)</span></td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">FranchiseOrderDetails</h5>
+
+        <!-- Floating Labels Form -->
+        <form class="row g-3">
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="#" placeholder="Quantity">
+                    <label for="floatingQuantity">Quantity</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingAmount" placeholder="Amount">
+                    <label for="floatingAmount">Amount</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingDiscount" placeholder="Discount">
+                    <label for="floatingDiscount">Discount</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="TotalAmount" id="#" />
+                    <label for="floatingTotalAmount">TotalAmount</label>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </form><!-- End floating Labels Form -->
+
+    </div>
+</div>
