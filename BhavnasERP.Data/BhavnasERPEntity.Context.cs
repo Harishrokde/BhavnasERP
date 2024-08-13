@@ -25,6 +25,10 @@ namespace BhavnasERP.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<tbl_City> tbl_City { get; set; }
+        public virtual DbSet<tbl_Contact> tbl_Contact { get; set; }
+        public virtual DbSet<tbl_State> tbl_State { get; set; }
+        public virtual DbSet<tblcarrer> tblcarrers { get; set; }
         public virtual DbSet<tblCategory> tblCategories { get; set; }
         public virtual DbSet<tblCustomer> tblCustomers { get; set; }
         public virtual DbSet<tblCustomerInvoice> tblCustomerInvoices { get; set; }

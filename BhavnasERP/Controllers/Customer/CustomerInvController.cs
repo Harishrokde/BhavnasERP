@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace BhavnasERP.Controllers.Customer
 {
-    public class CustomerInvoiceController : Controller
+    public class CustomerInvController : Controller
     {
-        // GET: CustomerInvoice
+        // GET: CustomerInv
         public ActionResult CustomerInvoiceIndex()
         {
             return View();

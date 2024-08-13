@@ -12,15 +12,16 @@ namespace BhavnasERP.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class tblFeedback
+    public partial class tblcarrer
     {
-        public int Id { get; set; }
-        public int CustomerId { get; set; }
+        public int id { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
-        public string Mobile { get; set; }
-        public string Rating { get; set; }
-        public string Cust_Photo { get; set; }
-        public string Message { get; set; }
+        public Nullable<long> MobileNo { get; set; }
+        public Nullable<System.DateTime> Dateofbirth { get; set; }
+        public string ResumeFile { get; set; }
+        public string Position { get; set; }
+        public Nullable<decimal> ExpectatedSalary { get; set; }
+        public string EmpAddress { get; set; }
+        public Nullable<System.DateTime> creationdate { get; set; }
     }
 }

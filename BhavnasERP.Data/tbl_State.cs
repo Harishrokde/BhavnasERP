@@ -12,15 +12,9 @@ namespace BhavnasERP.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class tblFeedback
+    public partial class tbl_State
     {
         public int Id { get; set; }
-        public int CustomerId { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Mobile { get; set; }
-        public string Rating { get; set; }
-        public string Cust_Photo { get; set; }
-        public string Message { get; set; }
+        public string State_Name { get; set; }
     }
 }

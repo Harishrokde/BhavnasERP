@@ -6,7 +6,7 @@
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Content/Project-JS/Customer/CustomerOrder.js"></script>
-<script src="~/Content/Project-JS/Customer/Customer.js"></script>
+
 
 <style>
     .dataTables_filter {
@@ -24,13 +24,14 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
 @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Content/Pages/FranchiseOrder.js"></script>*@
-<script>
+@*<script>
     var js = jQuery.noConflict(true);
-    js(document).ready(function () {
+    js(document).ready(function () 
+    {
         js('#tblVadak').DataTable();
 
     });
-</script>
+</script>*@
 
 <div class="card" style="margin-bottom:5px;">
     <div class="card-body">
@@ -122,37 +123,47 @@
             <div>
                 <div class="card p-3">
                     <form class="row g-3">
-                        <div class="col-sm-7">
+                        <div class="col-sm-0">
                             @*<label for="inputName" class="form-label">Name</label>*@
-                            <input type="text" class="form-control" id="txtName" placeholder="CustomerName">
+                            <input type="text" class="form-control" id="hdnId" value="Id" hidden>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="col-sm-3">
                             @*<label for="inputMobile" class="form-label">Mobile</label>*@
-                            <input type="text" class="form-control" id="txtMobileNo" placeholder="Mobile">
+                            <input type="text" class="form-control" id="txtDeliveryDate" placeholder="DeliveryDate">
+                        </div>
+
+                        <div class="col-md-3">
+                            @*<label for="inputCity" class="form-label">City</label>*@
+                            <input type="text" class="form-control" id="txtTransactionMode" placeholder="TransactionMode">
                         </div>
 
                         <div class="col-md-4">
-                            @*<label for="inputCity" class="form-label">City</label>*@
-                            <input type="text" class="form-control" id="txtCity" placeholder="City">
-                        </div>
-
-                        <div class="col-md-5">
                             @*<label for="inputPincode" class="form-label">Pincode</label>*@
-                            <input type="text" class="form-control" id="txtPincode" placeholder="Pincode">
+                            <input type="text" class="form-control" id="txtAmount" placeholder="Amount">
                         </div>
 
-                        <div class="col-4">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Address" id="txtAddress" style="height: 50px;"></textarea>
-                                    <label for="floatingTextarea">Address</label>
-                                </div>
-                         </div>
-                        
+                        <div class="col-md-4">
+                            @*<label for="inputPincode" class="form-label">Pincode</label>*@
+                            <input type="text" class="form-control" id="txtDiscount" placeholder="Discount">
+                        </div>
 
-                        <div class="col-md-2">
+                        <div class="col-md-3">
+                            @*<label for="inputPincode" class="form-label">Pincode</label>*@
+                            <input type="text" class="form-control" id="txtTotalAmount" placeholder="TotalAmount">
+                        </div>
+
+                        @*<div class="col-4">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Address" id="txtAddress" style="height: 50px;"></textarea>
+                                <label for="floatingTextarea">Address</label>
+                            </div>
+                        </div>*@
+
+
+                        <div class="col-md-3">
                             <div class="text-end">
-                                <input type="submit" class="btn btn-success" value="SUBMIT" onclick="SaveCustomer()" />
+                                <input type="submit" class="btn btn-success" value="SUBMIT" onclick="SaveCustomerOrder()" />
                             </div>
                         </div>
                         <hr />
@@ -199,23 +210,23 @@
                             </div>
                         </div>
 
-                        <div class="col-md-5">                            
+                        @*<div class="col-md-5">
                             <input type="text" class="form-control" id="txtAmount" placeholder="Amount">
-                        </div>
+                        </div>*@
 
-                        <div class="col-md-5">
+                        @*<div class="col-md-5">
                             <input type="text" class="form-control" id="#" placeholder="Discount">
-                        </div>
+                        </div>*@
 
                         <div class="col-md-2">
                             <div class="text-end">
                                 <input type="button" class="btn btn-success" value="ADD" />
                             </div>
                         </div>
-                        
-                        <div class="col-md-6">
+
+                        @*<div class="col-md-6">
                             <input type="text" class="form-control" id="#" placeholder="TotalAmount">
-                        </div>
+                        </div>*@
                         <div class="col-md-6">
                             <input type="text" class="form-control" id="#" placeholder="BalanceAmount">
                         </div>
@@ -228,12 +239,12 @@
                         <div class="col-md-6">
                             <label for="inputDeliveryDate" class="form-label">Delivery Date</label>
                             <input type="date" class="form-control" id="txtDeliveryDate" placeholder="Delivery Date">
-                        </div>                 
+                        </div>
 
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary" onClick="SaveAccount()">Submit</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>
-                        </div>                       
+                        </div>
 
                     </form>
                 </div>
